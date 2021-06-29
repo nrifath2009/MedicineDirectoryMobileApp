@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             Title="Event List"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MedicineDirectoryMobileApp.EventPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Picker x:Name="eventPicker" Margin="10" SelectedIndexChanged="eventPicker_SelectedIndexChanged" Title="Select a event"></Picker>
+
+            <Grid x:Name="eventDetailGrid" BackgroundColor="#EB1C24" Padding="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="0" Grid.Column="0" Text="Name: "></Label>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="0" Grid.Column="1" Text="{Binding EventName}"></Label>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="1" Grid.Column="0" Text="Event Time: "></Label>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="1" Grid.Column="1" Text="{Binding EventDateTime}"></Label>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="2" Grid.Column="0" Text="Meeting Link: "></Label>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="2" Grid.Column="1" Text="{Binding MeetingLink}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding MeetingLink}"
+                  TextColor="White"
+                  TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

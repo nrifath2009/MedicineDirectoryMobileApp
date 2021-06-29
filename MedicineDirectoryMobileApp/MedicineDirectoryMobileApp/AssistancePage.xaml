@@ -1,15 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             Title="Assistants Page"
+             Title="Assistance List"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MedicineDirectoryMobileApp.AssistancePage">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
-            <Picker x:Name="areaPicker" SelectedIndexChanged="areaPicker_SelectedIndexChanged" Title="Select a area"></Picker>
+            <Picker x:Name="areaPicker" Margin="10" SelectedIndexChanged="areaPicker_SelectedIndexChanged" Title="Select a area"></Picker>
 
-            <StackLayout>
-                
-            </StackLayout>
+            <Grid x:Name="assistanceDetailGrid" BackgroundColor="#EB1C24" Padding="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="0" Grid.Column="0" Text="Name: "></Label>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="0" Grid.Column="1" Text="{Binding Name}"></Label>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="1" Grid.Column="0" Text="Email: "></Label>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="1" Grid.Column="1" Text="{Binding Email}"></Label>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="2" Grid.Column="0" Text="Mobile: "></Label>
+                <Label TextColor="#FFF" FontSize="Medium" Padding="5" Grid.Row="2" Grid.Column="1" Text="{Binding Mobile}"></Label>
+            </Grid>
             
         </StackLayout>
         

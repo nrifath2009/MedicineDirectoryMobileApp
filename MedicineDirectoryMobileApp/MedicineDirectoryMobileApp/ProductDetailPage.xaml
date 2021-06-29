@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             Title="{Binding Name}"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MedicineDirectoryMobileApp.ProductDetailPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal" Padding="5" >
+            <StackLayout>
+                <Image HeightRequest="150" WidthRequest="150" Source="https://cdn.mos.cms.futurecdn.net/GazNjf2Z9LLmxnVPHpSTk4-480-80.jpg"></Image>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="{Binding Name}" FontSize="26" TextColor="#000" FontAttributes="Bold"></Label>
+                <Label TextColor="#000" Text="{Binding Description}" FontSize="17" FontAttributes="Italic"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

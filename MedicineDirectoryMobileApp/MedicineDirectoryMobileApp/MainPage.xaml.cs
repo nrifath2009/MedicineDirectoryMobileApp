@@ -13,6 +13,7 @@ namespace MedicineDirectoryMobileApp
         public MainPage()
         {
             InitializeComponent();
+            
         }
 
         private async void productCategoryButton_Clicked(object sender, EventArgs e)
@@ -23,6 +24,11 @@ namespace MedicineDirectoryMobileApp
         private async void assistanceButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AssistancePage());
+        }
+
+        private async void eventButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EventPage());
         }
     }
 }

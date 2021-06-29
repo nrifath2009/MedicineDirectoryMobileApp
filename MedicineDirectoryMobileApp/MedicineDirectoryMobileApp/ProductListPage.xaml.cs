@@ -30,8 +30,9 @@ namespace MedicineDirectoryMobileApp
             {
                 Product product = new Product
                 {
-                    Description = "Simple Description",
+                    Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer",
                     Name = "Product " + i,
+                    ImageUrl = "https://cdn.mos.cms.futurecdn.net/GazNjf2Z9LLmxnVPHpSTk4-480-80.jpg",
                     Id = i,
                     CategoryId = random.Next(1, 30)
                 };
@@ -46,20 +47,35 @@ namespace MedicineDirectoryMobileApp
                 Padding = 10
             };
 
-            foreach (var item in products.Where(c => c.CategoryId == selectedCategoryId))
-            {
-                Button categoryBtn = new Button
-                {
-                    Text = item.Name,
-                    FontAttributes = FontAttributes.Bold,
-                    FontSize = 16,
-                    TextColor = Color.FromHex("0F0F1E"),
-                    BackgroundColor = Color.FromHex("FFF")
-                };
-                categoryStackLayout.Children.Add(categoryBtn);
-            }
+            var categoryProducts =  products.Where(c => c.CategoryId == selectedCategoryId);
+            productListTable.ItemsSource = categoryProducts;
+            //foreach (var item in categoryProducts)
+            //{
+            //    ImageCell imageCell = new ImageCell
+            //    {
+            //        DetailColor = Color.Black,
+            //        TextColor = Color.Black,
+            //        ImageSource = item.ImageUrl,
+            //        Text = item.Name,
+            //        Detail = item.Description
+            //    };
 
-            productScrollView.Content = categoryStackLayout;
+            //}
+
+
+        }
+
+        private async void ImageCell_Tapped(object sender, EventArgs e)
+        {
+            var imageCell =  sender as ImageCell;
+            if (imageCell != null)
+            {
+                var selectedProduct = imageCell.BindingContext as Product;
+                if (selectedProduct != null)
+                {
+                    await Navigation.PushAsync(new ProductDetailPage(selectedProduct));
+                }
+            }
         }
     }
 }

@@ -4,12 +4,13 @@ using System.Text;
 
 namespace MedicineDirectoryMobileApp.ViewModels
 {
-    public class Product
+    public class Assistance
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public string ImageUrl { get; set; }
-        public int CategoryId { get; set; }
+        public string Email { get; set; }
+        public string Mobile { get; set; }
+        public int LocationId { get; set; }
+        public string LocationName { get; set; }
     }
 }

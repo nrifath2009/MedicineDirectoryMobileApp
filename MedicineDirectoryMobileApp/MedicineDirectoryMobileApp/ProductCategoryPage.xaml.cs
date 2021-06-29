@@ -41,9 +41,10 @@ namespace MedicineDirectoryMobileApp
                 {
                     Text = item.CategoryName,
                     FontAttributes = FontAttributes.Bold,
-                    FontSize = 16,
-                    TextColor = Color.FromHex("0F0F1E"),
-                    BackgroundColor = Color.FromHex("FFF")
+                    FontSize = 18,
+                    HeightRequest=50,
+                    TextColor = Color.FromHex("FFF"),
+                    BackgroundColor = Color.FromHex("EB1C24")
                 };
                 categoryBtn.BindingContext = item;
                 categoryBtn.Clicked += CategoryBtn_Clicked;

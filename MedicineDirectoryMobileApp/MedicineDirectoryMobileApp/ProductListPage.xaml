@@ -2,11 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Medicine List"
-             BackgroundColor="#0F0F1E"
+             BackgroundColor="#FFF"
              x:Class="MedicineDirectoryMobileApp.ProductListPage">
+    
     <ContentPage.Content>
-        <ScrollView x:Name="productScrollView">
-        </ScrollView>
-        
+        <ListView x:Name="productListTable">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Tapped="ImageCell_Tapped"
+                            Text="{Binding Name}"
+                            DetailColor="Black"
+                            TextColor="Black"
+                            Detail="{Binding Description}" 
+                            ImageSource="{Binding ImageUrl}">
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+       
     </ContentPage.Content>
 </ContentPage>

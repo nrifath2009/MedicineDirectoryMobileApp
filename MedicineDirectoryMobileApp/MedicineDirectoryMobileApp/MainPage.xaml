@@ -1,38 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             BackgroundColor="#0F0F1E"
+             BackgroundColor="#EEE"
              Title="Home Page"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MedicineDirectoryMobileApp.MainPage">
-
-    <!--<StackLayout>
-        <StackLayout Orientation="Horizontal" Margin="10">
-            <Button HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Product Info" BackgroundColor="Purple" FontSize="Large" TextColor="White"></Button>
-            <Button HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Assistance" BackgroundColor="Purple" FontSize="Large" TextColor="White"></Button>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal" Margin="10,0,10,0">
-            <Button HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Event" BackgroundColor="Purple" FontSize="Large" TextColor="White"></Button>
-            <Button HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="About us" BackgroundColor="Purple" FontSize="Large" TextColor="White"></Button>
-        </StackLayout>
-       
-    </StackLayout>-->
-    <Grid>
+    <Grid Margin="10">
         <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Image Source="PN"></Image>
-        <Button x:Name="productCategoryButton" Clicked="productCategoryButton_Clicked" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Product Info" BackgroundColor="White" FontSize="Large" TextColor="#0F0F1E"></Button>
-        <Button x:Name="assistanceButton" Clicked="assistanceButton_Clicked" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Assistance" BackgroundColor="White" FontSize="Large" TextColor="#0F0F1E"></Button>
+        <Image Grid.Row="0" Grid.ColumnSpan="2" Source="PNG_POST.png"></Image>
+        <Button FontAttributes="Bold" x:Name="productCategoryButton" Clicked="productCategoryButton_Clicked" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Product Info" BackgroundColor="#EB1C24" FontSize="Large" TextColor="#FFF"></Button>
+        <Button FontAttributes="Bold" x:Name="assistanceButton" Clicked="assistanceButton_Clicked" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Assistance" BackgroundColor="#EB1C24" FontSize="Large" TextColor="#FFF"></Button>
 
-        <Button Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Event" BackgroundColor="White" FontSize="Large" TextColor="#0F0F1E"></Button>
-        <Button Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="About us" BackgroundColor="White" FontSize="Large" TextColor="#0F0F1E"></Button>
+        <Button FontAttributes="Bold" x:Name="eventButton" Clicked="eventButton_Clicked" Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="Event" BackgroundColor="#EB1C24" FontSize="Large" TextColor="#FFF"></Button>
+        <Button FontAttributes="Bold" Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Text="About us" BackgroundColor="#EB1C24" FontSize="Large" TextColor="#FFF"></Button>
 
     </Grid>
 
